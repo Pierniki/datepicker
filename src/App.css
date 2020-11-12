@@ -1,4 +1,9 @@
 .App {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -26,6 +31,81 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@keyframes scroll_down_anim {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0) rotateX(var(--deg));
+  }
+}
+
+@keyframes scroll_up_anim {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0) rotateX(var(--deg));
+  }
+}
+
+.title {
+  width: 300px;
+  text-align: left;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.title_primary {
+  margin-bottom: 0;
+}
+
+.title_secondary {
+  margin-top: 0;
+  color: #033aa7;
+}
+
+.scroll_container {
+  touch-action: none;
+  display: flex;
+  position: relative;
+}
+
+.scroll_column {
+  max-height: 250px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.scroll_button {
+  font-weight: bold;
+  font-size: 1.7em;
+  background-color: white;
+  border: 0;
+}
+
+.scroll_top {
+  animation: scroll_up_anim 0.3s ease-out; /* the name of the animation we defined above */
+}
+
+.scroll_down {
+  animation: scroll_up_anim 0.3s ease-out; /* the name of the animation we defined above */
+}
+
+.days_column button {
+  color: black;
+}
+
+.months_column button {
+  color: #033aa7;
+}
+
+.years_column button {
+  color: #5589f1;
 }
 
 @keyframes App-logo-spin {
